@@ -1,0 +1,174 @@
+body {
+    background-color: var(--dark-gray);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 45px 96px;
+}
+
+.title-container {
+    display: flex;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.title-container img {
+    height: 33px;
+}
+
+.title-container span {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-self: left;
+}
+
+.navigation-container {
+    display: flex;
+    gap: 8px;
+    list-style-type: none;
+}
+
+.navigation-container > li > a {
+    color: var(--white);
+    text-align: center;
+    font-family: Manrope, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.navigation-container > li:nth-child(3) > a {
+    background-color: var(--secondary);
+    border-radius: 50px;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: flex-end;
+    /*flex: 5;*/
+    /*width: 100%;*/
+}
+
+.circle-image {
+    align-self: flex-end;
+    text-align: right;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.circle-image img {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+}
+
+.circle-image span {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+section {
+    margin: 80px 96px 0 96px;
+}
+
+.create-collecting-container {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.create-collecting-container > h2 {
+    margin: 0;
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.create-collecting-container > a {
+    border-radius: 50px;
+    background: var(--primary);
+    text-decoration: none;
+    color: var(--dark-gray);
+    text-align: center;
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    padding: 12px 53px;
+}
+
+.create-collecting-container > a:hover {
+    background: var(--primary-hover);
+}
+
+.collecting-container {
+    border-radius: 50px;
+    background: var(--secondary);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 30px 45px;
+    margin-bottom: 24px;
+}
+
+.collecting-left {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.collecting-left > span:first-child {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+}
+
+.collecting-left > span:last-child {
+    color: var(--primary);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.collecting-right {
+    display: flex;
+    gap: 60px;
+    text-decoration: none;
+}
+
+.collecting-right > span {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+}

@@ -1,0 +1,158 @@
+body {
+    background-color: var(--dark-gray);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 45px 96px;
+}
+
+.title-container {
+    display: flex;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.title-container img {
+    height: 33px;
+}
+
+.title-container span {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-self: left;
+}
+
+.navigation-container {
+    display: flex;
+    gap: 8px;
+    list-style-type: none;
+}
+
+.navigation-container > li > a {
+    color: var(--white);
+    text-align: center;
+    font-family: Manrope, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.navigation-container > li:nth-child(2) > a {
+    background-color: var(--secondary);
+    border-radius: 50px;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: flex-end;
+    /*flex: 5;*/
+    /*width: 100%;*/
+}
+
+.circle-image {
+    align-self: flex-end;
+    text-align: right;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.circle-image img {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+}
+
+.circle-image span {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    /*width: 100%;*/
+    margin: 40px 96px;
+
+}
+
+section h2 {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.create-account-button {
+    border-radius: 50px;
+    background: var(--primary);
+    color: var(--dark-gray);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    padding: 12px 36px;
+    align-self: center;
+}
+
+.create-account-button:hover {
+    background: var(--primary-hover);
+}
+
+.account-container {
+    border-radius: 50px;
+    background: var(--secondary);
+    margin-bottom: 24px;
+    padding: 30px 45px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.account-container > p {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+}
+
+.account-right {
+    display: flex;
+    gap: 60px;
+}
+
+.account-right > span {
+    color: var(--white);
+    text-align: right;
+    font-family: Manrope, serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+}

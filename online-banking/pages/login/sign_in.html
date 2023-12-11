@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/login/login.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <script src="sign_in.js" defer></script>
+</head>
+<body>
+<header>
+    <a class="title-container" href="/">
+        <img src="/assets/logo.svg" alt="">
+        <span>OnlineB</span>
+    </a>
+    <div class="authorize-container">
+        <a href="/register">Регистрация</a>
+        <a href="/login">Вход</a>
+    </div>
+</header>
+
+<div class="main-container">
+    <h2>Вход</h2>
+    <form id="login-form" action="" method="post">
+        <div class="login-container">
+            <label>
+                <input placeholder="Email" id="email" type="text" name="email" required>
+            </label>
+            <label>
+                <input placeholder="Пароль" id="password" type="password" name="password" required>
+            </label>
+            <div class="button-wrapper">
+                <button type="submit">Войти</button>
+            </div>
+        </div>
+        <span>Нет аккаунта? <a href="/register">Зарегистрироваться</a></span>
+    </form>
+</div>
+</body>
+</html>

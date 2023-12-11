@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый сбор</title>
+    <link rel="stylesheet" href="/create_collecting/create_collecting.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="create_collecting.js" defer></script>
+</head>
+<body>
+
+<header>
+    <a class="title-container" href="/profile">
+        <img src="/assets/logo.svg" alt="">
+        <span>OnlineB</span>
+    </a>
+
+    <nav>
+        <ul class="navigation-container">
+            <li><a href="/payments">Платежи</a></li>
+            <li><a href="/accounts">Счета</a></li>
+            <li><a href="/collectings">Сборы</a></li>
+            <li><a href="/credits">Кредиты</a></li>
+        </ul>
+    </nav>
+
+    <div class="avatar-container">
+        <a href="/profile" class="circle-image">
+            <img src="/assets/avatar.svg" alt=""/>
+            <span></span>
+        </a>
+    </div>
+</header>
+
+<section>
+    <h1>Новый сбор</h1>
+    <div class="details-container">
+        <div class="collecting-name">
+            <p>Название</p>
+            <input type="text">
+        </div>
+        <div class="second-row">
+            <div class="sum-wrapper">
+                <p>Сумма</p>
+                <input type="text" oninput="validateNumber(this)">
+            </div>
+
+            <div class="date-wrapper">
+                <p>Дата окончания</p>
+                <input type="date" min="2023-12-12">
+            </div>
+        </div>
+        <div>
+            <div class="members-header">
+                <p>Участники</p>
+                <button><img src="/assets/plus-button.svg" alt=""/></button>
+                <div class="user-adder">
+                    <input type="tel">
+                </div>
+            </div>
+            <div class="members-container">
+<!--                <div class="member">-->
+<!--                    <span>Ангелина Царёва</span>-->
+<!--                    <span>+375 (29) 123-45-67</span>-->
+<!--                </div>-->
+            </div>
+        </div>
+
+
+        <div class="account-wrapper">
+            <p>Счет для зачисления</p>
+            <select name="accounts" id="accounts"></select>
+        </div>
+
+        <div class="part-sum">
+            <p>Предварительная сумма</p>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="bottom-buttons">
+        <a href="/collectings">Отменить</a>
+        <a href="/collectings">Подтвердить</a>
+    </div>
+</section>
+
+</body>
+</html>

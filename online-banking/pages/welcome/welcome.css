@@ -1,0 +1,116 @@
+body {
+    background-color: var(--dark-gray);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 45px 96px;
+}
+
+.title-container {
+    display: flex;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.title-container img {
+    height: 33px;
+}
+
+.title-container span {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.authorize-container{
+    display: flex;
+    align-items: center;
+    flex: 5;
+    gap: 27px;
+    justify-content: flex-end;
+}
+
+.authorize-container > a {
+    text-align: center;
+    font-family: Manrope, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.authorize-container > a:first-child {
+    color: var(--white);
+    margin-right: 10px;
+}
+
+.authorize-container > a:last-child {
+    color: var(--dark-gray);
+    background: var(--primary);
+    padding: 12px 28px;
+    border-radius: 50px;
+}
+
+.authorize-container > a:last-child:hover {
+    background: var(--primary-hover);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 100px;
+}
+
+.main-container {
+    max-width: 685px;
+}
+
+.main-container > h1 {
+    font-family: Manrope, serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 80px;
+    color: var(--white);
+    line-height: 110%;
+    padding: 0 0 34px 0;
+    margin: 0;
+}
+
+.main-container > p {
+    font-family: Manrope, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--white);
+    line-height: 120%;
+    margin: 0 0 48px 0;
+}
+
+.main-container > a {
+    width: fit-content;
+    background: var(--primary);
+    border-radius: 50px;
+    font-family: Manrope, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--dark-gray);
+    padding: 18px 45px;
+    text-decoration: none;
+}
+
+.main-container > a:hover {
+    background: var(--primary-hover);
+}
+
+section > img {
+    width: 520px;
+}
+
