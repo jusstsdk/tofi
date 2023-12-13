@@ -66,6 +66,4 @@ app.get('/credits', (req, res) => {
     res.sendFile(path.join(__dirname, '../pages/credits/credits.html'));
 })
 
-
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
-

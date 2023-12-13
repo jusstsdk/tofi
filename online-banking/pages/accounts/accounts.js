@@ -25,7 +25,7 @@ function createAccountInfo(account) {
     accountRight.classList.add("account-right")
 
     const accountBalance = document.createElement("span")
-    accountBalance.innerHTML = `${account.balance} BYN`
+    accountBalance.innerHTML = `Баланс: ${account.balance} BYN`
     const accountMoreInfo = document.createElement("img")
     accountMoreInfo.src = "/assets/ellipsis-vertical.svg"
 

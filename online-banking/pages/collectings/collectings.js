@@ -37,7 +37,7 @@ function createCollectingInfo(collecting) {
     const collectingName = document.createElement("span")
     collectingName.innerHTML = collecting.name
     const collectingProgress = document.createElement("span")
-    collectingProgress.innerHTML = `???%`
+    // collectingProgress.innerHTML = `???%`
     collectingLeft.appendChild(collectingName)
     collectingLeft.appendChild(collectingProgress)
 

@@ -59,57 +59,65 @@ senderSelect.addEventListener("change", async (event) => {
 
 const createPaymentButton = document.querySelector(".bottom-buttons a:last-child")
 createPaymentButton.addEventListener("click", async (event) => {
-    event.preventDefault()
-    const receiverAccount = document.querySelector(".account-receiver-wrapper input").value
-    const senderAccount = document.querySelector(".account-wrapper select").value
-    const sum = document.querySelector(".sum-wrapper input").value
-    console.log(senderAccount)
-    console.log(receiverAccount)
-    console.log(sum)
+    event.preventDefault();
+    const receiverAccount = document.querySelector(".account-receiver-wrapper input").value;
+    const senderAccount = document.querySelector(".account-wrapper select").value;
+    const sum = document.querySelector(".sum-wrapper input").value;
+    console.log(senderAccount);
+    console.log(receiverAccount);
+    console.log(sum);
 
     if (!receiverAccount) {
-        alert("Введите счет получателя")
-        return
+        alert("Введите счет получателя");
+        return;
     }
 
     if (!sum) {
-        alert("Введите сумму перевода")
-        return
+        alert("Введите сумму перевода");
+        return;
     }
 
-    const selectedAccount = await fetch(`/account/byId/${senderAccount}`)
-    const selectedAccountData = await selectedAccount.json()
+    try {
+        const selectedAccount = await fetch(`/account/byId/${senderAccount}`);
+        if (!selectedAccount.ok) {
+            throw new Error(`Error: ${selectedAccount.status}`);
+        }
 
-    if (sum > selectedAccountData.balance) {
-        alert("На вашем счету недостаточно средств")
-        return
-    }
+        const selectedAccountData = await selectedAccount.json();
 
-    const receiver = await fetch(`/account/byId/${receiverAccount}`);
-    if (receiver.ok) {
-        const receiverData = await receiver.json();
+        if (sum > selectedAccountData.balance) {
+            alert("На вашем счету недостаточно средств");
+            return;
+        }
+
+        const receiverResponse = await fetch(`/account/byId/${receiverAccount}`);
+        if (!receiverResponse.ok) {
+            throw new Error(`Error: ${receiverResponse.status}`);
+        }
+
+        const receiverData = await receiverResponse.json();
         const data = {
             sender_account_id: senderAccount,
             receiver_account_id: receiverAccount,
             transfer_amount: sum
-        }
+        };
 
-        fetch("/payment/create", {
+        const createPaymentResponse = await fetch("/payment/create", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
-        })
+        });
 
-        window.location = '/payments'
+        if (!createPaymentResponse.ok) {
+            throw new Error(`Error: ${createPaymentResponse.status}`);
+        }
 
-    } else if (receiver.status === 404) {
-        alert("Получатель с таким счетом не существует")
-        console.log('Receiver not found');
-    } else {
-        console.error('Error:', receiver.status);
+        window.location = '/payments';
+    } catch (error) {
+        console.error('Error:', error.message);
+        // Обработка ошибок fetch
+        alert('Проверьте правильность введенных данных');
     }
-
-
-})
+});

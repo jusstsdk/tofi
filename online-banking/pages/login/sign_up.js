@@ -44,12 +44,10 @@ registerForm.addEventListener("submit", (event) => {
     })
         .then(response => {
             if (response.status === 201) {
-                // Регистрация прошла успешно
                 alert('Вы успешно зарегистрированы');
                 window.location = '/login/'
-
             } else if (response.status === 400) {
-                // Ошибка на сервере
+                alert("Проверьте введенные данные")
                 return response.json();
             } else {
                 throw new Error('Unexpected server error');
@@ -57,13 +55,13 @@ registerForm.addEventListener("submit", (event) => {
         })
         .then(data => {
             if (data && data.message === 'User with this email already exists') {
-                // Пользователь с таким email уже существует
                 alert('Пользователь с таким email уже существует');
             } else {
                 console.error('Ошибка регистрации:', data ? data.message : 'Unexpected server error');
             }
         })
         .catch(error => {
+            alert("Проверьте введенные данные")
             console.error('Ошибка регистрации:', error.message);
         });
 
