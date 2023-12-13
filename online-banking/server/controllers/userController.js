@@ -1,5 +1,32 @@
 const db = require('../db')
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer')
+require('dotenv').config();
+
+function generateRandom6DigitNumber() {
+    const min = 100000;
+    const max = 999999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const sendEmail = async (receiver, content) => {
+    const mailTransporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: process.env.GMAIL_NAME,
+            pass: process.env.GMAIL_PASS
+        }
+    })
+
+    const details = {
+        from: process.env.GMAIL_NAME,
+        to: receiver,
+        subject: "Код подтвеждения",
+        text: `Код подтверждения входа: ${content}`
+    }
+
+    await mailTransporter.sendMail(details);
+};
 
 class UserController {
     async registration(req, res) {
@@ -18,6 +45,18 @@ class UserController {
         }
     }
 
+    async sendVerificationCode(req, res) {
+        try {
+            const email = req.params.email
+            const verificationCode = generateRandom6DigitNumber()
+            const authCode = await db.query('UPDATE users SET auth_code = $1 WHERE email = $2', [verificationCode, email])
+            await sendEmail(email, verificationCode)
+            res.status(200).json({ authCode: verificationCode })
+        }
+        catch {
+            res.status(500).json({ message: 'Internal server error' });
+        }
+    }
 
     async login(req, res) {
         try {

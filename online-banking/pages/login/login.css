@@ -142,6 +142,17 @@ header {
     margin-top: 20px;
 }
 
+.main-container p {
+    font-family: Manrope, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--white);
+    display: block;
+    margin-top: 20px;
+}
+
 .main-container a {
     color: var(--primary);
     text-decoration: none;
@@ -150,3 +161,30 @@ header {
 .main-container a:hover {
     color: var(--primary-hover);
 }
+
+.verify-container {
+    display: none;
+}
+
+.show-verify-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.login-button {
+    display: none;
+}
+
+.show-login-button {
+    display: block;
+}
+
+.send-code {
+    display: none;
+}
+
+.show-send-code {
+    display: block;
+}
+

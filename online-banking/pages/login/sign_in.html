@@ -25,7 +25,7 @@
 
 <div class="main-container">
     <h2>Вход</h2>
-    <form id="login-form" action="" method="post">
+    <div>
         <div class="login-container">
             <label>
                 <input placeholder="Email" id="email" type="text" name="email" required>
@@ -33,12 +33,19 @@
             <label>
                 <input placeholder="Пароль" id="password" type="password" name="password" required>
             </label>
+            <div class="verify-container">
+                <p>Введите код подтверждения</p>
+                <label>
+                    <input placeholder="Код подтвреждения" id="verify-code" type="text" name="verify-code">
+                </label>
+            </div>
             <div class="button-wrapper">
-                <button type="submit">Войти</button>
+                <button id="send-code" class="show-send-code">Отправить код</button>
+                <button id="login-button" class="login-button">Войти</button>
             </div>
         </div>
         <span>Нет аккаунта? <a href="/register">Зарегистрироваться</a></span>
-    </form>
+    </div>
 </div>
 </body>
 </html>

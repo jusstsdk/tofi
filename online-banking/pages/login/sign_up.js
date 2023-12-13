@@ -12,6 +12,18 @@ registerForm.addEventListener("submit", (event) => {
     const password = document.getElementById("password").value
     const confirm_password = document.getElementById("confirm-password").value
 
+    const passportNumberRegex = /^[A-Z]{2}\d{7}$/;
+    if (!passportNumberRegex.test(passport)) {
+        alert('Неверный формат номера паспорта')
+        return
+    }
+
+    const phoneRegex = /^\+\d{12}$/;
+    if (!phoneRegex.test(phone)) {
+        alert('Неверный формат номера телефона')
+        return
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert("Неверный формат электронной почты")

@@ -4,6 +4,7 @@ const userController = require('../controllers/userController')
 
 router.post('/login', userController.login)
 router.post('/register', userController.registration)
+router.get('/send-code/:email', userController.sendVerificationCode)
 // router.get('/', userController.getAllUsers)
 router.get('/collecting/:phone', userController.getUserByPhone)
 router.get('/collecting/id/:id', userController.getUserById)

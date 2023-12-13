@@ -1,6 +1,9 @@
-loginForm = document.getElementById("login-form")
+const sendCodeButton = document.getElementById("send-code")
+const loginButton = document.getElementById("login-button")
+const verifyContainer = document.querySelector(".verify-container")
 
-loginForm.addEventListener("submit", (event) => {
+
+sendCodeButton.addEventListener("click", (event) => {
     event.preventDefault()
 
     const email = document.getElementById("email").value
@@ -22,18 +25,49 @@ loginForm.addEventListener("submit", (event) => {
             if (!response.ok) {
                 alert("Неверный email или пароль")
                 throw new Error('Network response was not ok');
-            }
-            else if (response.status === 201) {
+            } else if (response.status === 201) {
                 return response.json()
-            }
-            else {
+            } else {
                 alert("Error")
             }
         })
         .then((user) => {
-            // console.log(user)
-            localStorage.setItem('loggedInUser', JSON.stringify(user));
-            window.location = '/profile'
+            verifyContainer.classList.toggle("verify-container")
+            document.querySelector(".button-wrapper button").innerHTML = "Войти"
+
+            sendCodeButton.classList.toggle("send-code")
+            sendCodeButton.classList.toggle("show-send-code")
+            loginButton.classList.toggle("login-button")
+            loginButton.classList.toggle("show-login-button")
+
+
+            document.getElementById("email").setAttribute('disabled', 'disabled')
+            document.getElementById("password").setAttribute('disabled', 'disabled')
+
+            fetch(`/user/send-code/${email}`)
+                .then(response => {
+                    if (response.status === 500) {
+                        alert("Произошла ошибка")
+                        return
+                    }
+                    return response.json()
+                })
+                .then(data => {
+                    loginButton.addEventListener("click", () => {
+                        event.preventDefault()
+                        const authCodeInput = document.getElementById("verify-code").value
+                        console.log(authCodeInput)
+                        console.log(data.authCode)
+                        if (authCodeInput && (authCodeInput == data.authCode)) {
+                            alert("a")
+                            localStorage.setItem('loggedInUser', JSON.stringify(user));
+                            window.location = '/profile'
+                        }
+                        else {
+                            alert("Неверный код подтверждения")
+                        }
+                    })
+                })
         })
         .catch(error => {
             console.error(error);
