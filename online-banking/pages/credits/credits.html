@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Новый кредит</title>
-    <link rel="stylesheet" href="./credits.css"/>
-    <link rel="stylesheet" href="/styles.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
-            rel="stylesheet"
-    />
+    <meta charset="UTF-8">
+    <title>Кредиты</title>
+    <link rel="stylesheet" href="/credits/credits.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
     <script src="credits.js" defer></script>
 </head>
 <body>
+
 <header>
     <a class="title-container" href="/profile">
-        <img src="/assets/logo.svg" alt=""/>
+        <img src="/assets/logo.svg" alt="">
         <span>OnlineB</span>
     </a>
 
@@ -38,39 +37,13 @@
 </header>
 
 <section>
-    <h1>Новый кредит</h1>
-    <div class="details-container">
-        <div class="date-with-text">
-            <div class="date-wrapper">
-                <p>Срок кредита</p>
-                <!-- <input type="text" /> -->
-                <select>
-                    <option value="1">1 год</option>
-                    <option value="3">3 года</option>
-                    <option value="5">5 лет</option>
-                </select>
-            </div>
-            <span>
-                  Максимальная сумма на 1 год: 5000 BYN
-                <br>
-                  на 3 и 5 лет: 10000 BYN
-                </span>
-        </div>
-
-        <div class="sum-wrapper">
-            <p>Сумма кредита</p>
-            <input type="number" placeholder="0"/>
-        </div>
-        <div class="percent-result">
-            <p>Процент</p>
-            <span></span>
-        </div>
-        <div class="monthly-payment">
-            <p>Платеж за первый месяц</p>
-            <span>? BYN</span>
-        </div>
+    <a class="create-credit-button" href="/credits/create">Новый кредит</a>
+    <div class="credits-wrapper">
+<!--        <div class="credit-container">-->
+<!--            <a class="pay-credit" href="/credits/pay">Оплатить</a>-->
+<!--        </div>-->
     </div>
-
 </section>
+
 </body>
 </html>

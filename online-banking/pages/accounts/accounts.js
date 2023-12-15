@@ -5,9 +5,8 @@ async function fetchUserAccounts() {
     try {
         const userId = JSON.parse(localStorage.getItem("loggedInUser")).user_id
         const response = await fetch(`/account/${userId}`);
-        const data = await response.json();
-        console.log('Data from server:', data);
-        return data
+        // console.log('Data from server:', data);
+        return await response.json()
 
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -39,12 +38,19 @@ function createAccountInfo(account) {
 }
 
 async function displayAccounts() {
-    const accountsContainer = document.querySelector(".debit-container");
-    accountsContainer.innerHTML = ""
+    const debitAccountsContainer = document.querySelector(".debit-container");
+    debitAccountsContainer.innerHTML = ""
+    const creditAccountsContainer = document.querySelector(".credit-container");
+    creditAccountsContainer.innerHTML = ""
     try {
         const allAccounts = await fetchUserAccounts();
         allAccounts.forEach(account => {
-            accountsContainer.appendChild(createAccountInfo(account));
+            if (account.type_id === 1) {
+                debitAccountsContainer.appendChild(createAccountInfo(account));
+            }
+            else {
+                creditAccountsContainer.appendChild(createAccountInfo(account));
+            }
         });
     } catch (error) {
         console.error('Error displaying accounts:', error);
@@ -68,7 +74,7 @@ createAccountButton.addEventListener("click", async () => {
         body: JSON.stringify(data)
     })
         .then(data => {
-            console.log(data);
+            // console.log(data);
         })
         .catch(error => {
             console.error(error);

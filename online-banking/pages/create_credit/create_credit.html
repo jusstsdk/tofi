@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Новый кредит</title>
+    <link rel="stylesheet" href="/create_credit/create_credit.css"/>
+    <link rel="stylesheet" href="/styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet"/>
+    <script src="create_credit.js" defer></script>
+</head>
+<body>
+<header>
+    <a class="title-container" href="/profile">
+        <img src="/assets/logo.svg" alt=""/>
+        <span>OnlineB</span>
+    </a>
+
+    <nav>
+        <ul class="navigation-container">
+            <li><a href="/payments">Платежи</a></li>
+            <li><a href="/accounts">Счета</a></li>
+            <li><a href="/collectings">Сборы</a></li>
+            <li><a href="/credits">Кредиты</a></li>
+        </ul>
+    </nav>
+
+    <div class="avatar-container">
+        <a href="/profile" class="circle-image">
+            <img src="/assets/avatar.svg" alt=""/>
+            <span></span>
+        </a>
+    </div>
+</header>
+
+<section>
+    <h1>Новый кредит</h1>
+    <div class="details-container">
+        <div class="date-with-text">
+            <div class="date-wrapper">
+                <p>Срок кредита</p>
+                <!-- <input type="text" /> -->
+                <select>
+                    <option value="1" selected>1 год</option>
+                    <option value="3">3 года</option>
+                    <option value="5">5 лет</option>
+                </select>
+            </div>
+            <span>
+                  Максимальная сумма на 1 год: 5000 BYN
+                <br>
+                  на 3 и 5 лет: 10000 BYN
+                </span>
+        </div>
+
+        <div class="sum-wrapper">
+            <p>Сумма кредита</p>
+            <input type="number" placeholder="0"/>
+        </div>
+        <div class="percent-result">
+            <p>Процент</p>
+            <span></span>
+        </div>
+        <div class="credit-types">
+            <p><input type="radio" name="credit-type" id="annuity" value="1" checked>Аннуитетный</p>
+            <p><input type="radio" name="credit-type" id="differentiated" value="2">Дифференцированный</p>
+        </div>
+        <div class="overpayment">
+            <p>Переплата</p>
+            <span>0.00 BYN</span>
+        </div>
+    </div>
+    <div class="credit-schedule">
+        <p>График платежей</p>
+
+        <table>
+<!--            <tr>-->
+<!--                <th>Дата</th>-->
+<!--                <th>Платеж</th>-->
+<!--                <th>Проценты</th>-->
+<!--                <th>Тело кредита</th>-->
+<!--                <th>Остаток</th>-->
+<!--            </tr>-->
+<!--            <tr><td>15.12.2023</td><td>0,00</td><td>0,00</td><td>0,00</td><td>5000,00</td></tr>-->
+        </table>
+
+    </div>
+    <div class="bottom-buttons">
+        <a href="/credits">Оформить кредит</a>
+    </div>
+</section>
+</body>
+</html>

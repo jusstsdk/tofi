@@ -43,6 +43,7 @@ async function displayUserAccounts() {
 displayUserAccounts()
 
 const senderSelect = document.querySelector(".account-wrapper select")
+
 senderSelect.addEventListener("change", async (event) => {
     const balance = document.querySelector(".balance-wrapper span")
     const selectedAccountId = senderSelect.value
@@ -63,9 +64,9 @@ createPaymentButton.addEventListener("click", async (event) => {
     const receiverAccount = document.querySelector(".account-receiver-wrapper input").value;
     const senderAccount = document.querySelector(".account-wrapper select").value;
     const sum = document.querySelector(".sum-wrapper input").value;
-    console.log(senderAccount);
-    console.log(receiverAccount);
-    console.log(sum);
+    // console.log(senderAccount);
+    // console.log(receiverAccount);
+    // console.log(sum);
 
     if (!receiverAccount) {
         alert("Введите счет получателя");
@@ -117,7 +118,6 @@ createPaymentButton.addEventListener("click", async (event) => {
         window.location = '/payments';
     } catch (error) {
         console.error('Error:', error.message);
-        // Обработка ошибок fetch
         alert('Проверьте правильность введенных данных');
     }
 });

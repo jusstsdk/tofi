@@ -4,10 +4,10 @@ name.innerHTML = JSON.parse(localStorage.getItem("loggedInUser")).first_name
 async function fetchUserPayments() {
     try {
         const userId = JSON.parse(localStorage.getItem("loggedInUser")).user_id
-        console.log(userId)
+        // console.log(userId)
         const response = await fetch(`/payment/user/${userId}`);
         const data = await response.json();
-        console.log('Data from server:', data);
+        // console.log('Data from server:', data);
         return data
 
     } catch (error) {

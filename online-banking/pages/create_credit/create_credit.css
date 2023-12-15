@@ -92,50 +92,32 @@ nav {
 section {
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
-    /*width: 100%;*/
-    margin: 40px 96px;
-
+    /*margin-bottom: 60px;*/
+    margin: 0 96px 60px 96px;
 }
 
-section h2 {
+section h1 {
     color: var(--white);
     font-family: Manrope, serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
+    margin: 0 0 25px 0;
+    text-align: center;
 }
 
-.create-credit-button {
-    border-radius: 50px;
-    background: var(--primary);
-    color: var(--dark-gray);
-    font-family: Manrope, serif;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
-    text-decoration: none;
-    width: fit-content;
-    padding: 12px 36px;
-    align-self: center;
-    margin-bottom: 30px;
-}
-
-.create-credit-button:hover {
-    background: var(--primary-hover);
-}
-
-.credit-container {
+.details-container {
     border-radius: 50px;
     background: var(--secondary);
-    margin-bottom: 24px;
-    padding: 30px 45px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 20px;
+    width: 100%;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
-.credit-container p {
+.details-container p, .credit-schedule p {
     color: var(--white);
     font-family: Manrope, serif;
     font-size: 28px;
@@ -144,7 +126,31 @@ section h2 {
     margin: 0;
 }
 
-.credit-container span {
+.date-wrapper, .sum-wrapper, .date-wrapper, .percent-result, .overpayment {
+    display: flex;
+    gap: 60px;
+    align-items: end;
+}
+
+.user-adder input, .date-wrapper input, .sum-wrapper input, .date-wrapper select {
+    border-radius: 50px;
+    border: 2px solid var(--white);
+    background: var(--secondary);
+    height: 100%;
+    width: 200px;
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0 10px;
+}
+
+.account-wrapper select {
+    width: fit-content;
+}
+
+.percent-result span, .date-with-text span, .overpayment span {
     color: var(--white);
     font-family: Manrope, serif;
     font-size: 24px;
@@ -152,21 +158,58 @@ section h2 {
     font-weight: 400;
 }
 
-.pay-credit {
+.date-with-text span {
+    font-size: 18px;
+}
+
+.credit-types {
+    display: flex;
+    gap: 60px
+}
+
+.bottom-buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.bottom-buttons a {
+    border-radius: 50px;
+    background: var(--primary);
+    color: var(--dark-gray);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 16px 32px;
+}
+
+.bottom-buttons a:hover {
+    background: var(--primary-hover);
+}
+
+.credit-schedule {
+    padding: 30px 50px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+table th {
+    text-align: start;
     color: var(--white);
     font-family: Manrope, serif;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
-    border-radius: 50px;
-    border: 3px solid var(--white);
-    background: var(--secondary);
-    text-decoration: none;
-    padding: 12px 36px;
-    text-align: center;
-    width: fit-content;
 }
 
-.pay-credit:hover {
-    background: var(--dark-gray-hover);
+table td {
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
 }

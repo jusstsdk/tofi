@@ -28,17 +28,6 @@ class PaymentController {
         }
     }
 
-    // async getAllUserPayments(req, res) {
-    //     const user_id = req.params.id
-    //     const payments = await db.query(`SELECT th.*
-    //         FROM transactions_histories th
-    //         JOIN accounts a ON th.sender_account_id = a.account_id
-    //         WHERE a.user_id = ${user_id}
-    //         ORDER BY th.transaction_date DESC;
-    //     `)
-    //     return res.json(payments.rows)
-    // }
-
     async getAllUserPayments(req, res) {
         try {
             const user_id = req.params.id;

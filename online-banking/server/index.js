@@ -66,4 +66,14 @@ app.get('/credits', (req, res) => {
     res.sendFile(path.join(__dirname, '../pages/credits/credits.html'));
 })
 
+app.use('/credits/create', express.static(path.join(__dirname, '../pages/create_credit')));
+app.get('/credits/create', (req, res) => {
+    res.sendFile(path.join(__dirname, '../pages/create_credit/create_credit.html'));
+})
+
+app.use('/credits/pay', express.static(path.join(__dirname, '../pages/credit_payment')));
+app.get('/credits/pay', (req, res) => {
+    res.sendFile(path.join(__dirname, '../pages/credit_payment/credit_payment.html'));
+})
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))

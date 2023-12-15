@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Счета</title>
-    <link rel="stylesheet" href="/accounts/accounts.css">
+    <title>Оплата кредита</title>
+    <link rel="stylesheet" href="/credit_payment/credit_payment.css">
     <link rel="stylesheet" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="accounts.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <script src="credit_payment.js" defer></script>
 </head>
 <body>
 
@@ -36,14 +37,29 @@
 </header>
 
 <section>
-    <button class="create-account-button">Создать счет</button>
-    <h2>Дебетовые</h2>
-    <div class="debit-container">
+    <h1>Оплата кредита</h1>
+    <div class="details-container">
+
+        <div class="credit-wrapper">
+            <p>Выберите счет</p>
+            <select name="accounts" id="accounts" required></select>
+        </div>
+
+        <div class="balance-wrapper">
+            <p>Баланс</p>
+            <span></span>
+        </div>
+
+        <div class="sum-wrapper">
+            <p>Сумма</p>
+            <span></span>
+        </div>
 
     </div>
-    <h2>Кредитные</h2>
-    <div class="credit-container">
 
+    <div class="bottom-buttons">
+        <a href="/credits">Отменить</a>
+        <a href="/credits">Подтвердить</a>
     </div>
 </section>
 

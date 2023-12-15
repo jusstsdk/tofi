@@ -59,7 +59,6 @@ sendCodeButton.addEventListener("click", (event) => {
                         console.log(authCodeInput)
                         console.log(data.authCode)
                         if (authCodeInput && (authCodeInput == data.authCode)) {
-                            alert("a")
                             localStorage.setItem('loggedInUser', JSON.stringify(user));
                             window.location = '/profile'
                         }

@@ -95,47 +95,37 @@ section {
     /*align-items: center;*/
     /*width: 100%;*/
     margin: 40px 96px;
-
 }
 
-section h2 {
+section {
+    display: flex;
+    flex-direction: column;
+    /*margin-bottom: 60px;*/
+    margin: 0 96px 60px 96px;
+}
+
+section h1 {
     color: var(--white);
     font-family: Manrope, serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
+    margin: 0 0 25px 0;
+    text-align: center;
 }
 
-.create-credit-button {
-    border-radius: 50px;
-    background: var(--primary);
-    color: var(--dark-gray);
-    font-family: Manrope, serif;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
-    text-decoration: none;
-    width: fit-content;
-    padding: 12px 36px;
-    align-self: center;
-    margin-bottom: 30px;
-}
-
-.create-credit-button:hover {
-    background: var(--primary-hover);
-}
-
-.credit-container {
+.details-container {
     border-radius: 50px;
     background: var(--secondary);
-    margin-bottom: 24px;
-    padding: 30px 45px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 20px;
+    width: 100%;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
-.credit-container p {
+.details-container p {
     color: var(--white);
     font-family: Manrope, serif;
     font-size: 28px;
@@ -144,7 +134,7 @@ section h2 {
     margin: 0;
 }
 
-.credit-container span {
+.details-container span {
     color: var(--white);
     font-family: Manrope, serif;
     font-size: 24px;
@@ -152,7 +142,38 @@ section h2 {
     font-weight: 400;
 }
 
-.pay-credit {
+.credit-wrapper, .sum-wrapper, .balance-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: end;
+}
+
+.credit-wrapper select, .sum-wrapper input {
+    border-radius: 50px;
+    border: 2px solid var(--white);
+    background: var(--secondary);
+    height: 100%;
+    color: var(--white);
+    font-family: Manrope, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0 10px;
+    /*min-width: 420px;*/
+}
+
+.credit-wrapper select {
+    width: fit-content;
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.bottom-buttons a:first-child {
     color: var(--white);
     font-family: Manrope, serif;
     font-size: 28px;
@@ -160,13 +181,27 @@ section h2 {
     font-weight: 600;
     border-radius: 50px;
     border: 3px solid var(--white);
-    background: var(--secondary);
+    background: var(--dark-gray);
     text-decoration: none;
-    padding: 12px 36px;
-    text-align: center;
-    width: fit-content;
+    padding: 16px 52px;
 }
 
-.pay-credit:hover {
+.bottom-buttons a:last-child {
+    border-radius: 50px;
+    background: var(--primary);
+    color: var(--dark-gray);
+    font-family: Manrope, serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 16px 32px;
+}
+
+.bottom-buttons a:first-child:hover {
     background: var(--dark-gray-hover);
+}
+
+.bottom-buttons a:last-child:hover {
+    background: var(--primary-hover);
 }
