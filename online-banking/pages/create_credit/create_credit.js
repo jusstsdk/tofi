@@ -82,7 +82,7 @@ creditTypeRadios.forEach(radio => {
 });
 
 createCreditButton = document.querySelector(".bottom-buttons a")
-createCreditButton.addEventListener("click", async (event) => {
+createCreditButton.addEventListener("click",  (event) => {
     event.preventDefault()
 
     const userId = JSON.parse(localStorage.getItem("loggedInUser")).user_id
@@ -99,18 +99,19 @@ createCreditButton.addEventListener("click", async (event) => {
     }
 
     if (userId && creditType && sum && period) {
-        const createCreditResponse = await fetch("/credit/create", {
+        fetch("/credit/create", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
-        });
+        }).then(res => {
+            console.log(res)
+            alert("Вы успешно оформили кредит")
+            window.location = '/credits'
+        })
 
-        if (!createCreditResponse.ok) {
-            throw new Error(`Error: ${createCreditResponse.status}`);
-        }
-        window.location = '/credits'
+
     } else {
         alert("Заполните все поля")
     }
